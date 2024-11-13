@@ -1,0 +1,35 @@
+fn invert_the_case(s: String) -> String {
+    s.chars()
+        .map(|c| {
+            if c.is_uppercase() {
+                c.to_lowercase().collect::<String>()
+            } else {
+                c.to_uppercase().collect::<String>()
+            }
+        })
+        .collect()
+}
+
+fn main() {
+    let input = "Hello".to_string();
+    let output = invert_the_case(input.clone());
+    println!("Original: {}, Inverted: {}", input, output);
+}
+
+#[cfg(test)]
+mod tests {https://github.com/AndriyPetrovskiy2005/rust-2xx-practice/tree/main
+    use super::*;
+
+    #[test]
+    fn test() {
+        let data = [
+            ("Hello", "hELLO"),
+            ("Привет", "пРИВЕТ"),
+        ];
+
+        data.iter().for_each(|(a, b)| {
+            assert_eq!(invert_the_case(a.to_string()), b.to_string());
+            assert_eq!(invert_the_case(b.to_string()), a.to_string());
+        });
+    }
+}
