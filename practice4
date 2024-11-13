@@ -1,0 +1,15 @@
+const SIZE: usize = 5; 
+
+fn main() {
+    for i in 0..SIZE {
+        let spaces = SIZE - i - 1;   
+        let stars = 2 * i + 1;       
+        println!("{}{}", " ".repeat(spaces), "*".repeat(stars));
+    }
+
+    for i in (0..SIZE-1).rev() {
+        let spaces = SIZE - i - 1;   
+        let stars = 2 * i + 1;       
+        println!("{}{}", " ".repeat(spaces), "*".repeat(stars));
+    }
+}
